@@ -6,6 +6,10 @@ describe('#isDate', function(){
         const date = new Date();
         expect(isDate(date)).to.equal(true);
     });
+    it('should return true with Date object', function(){
+        const date = new Date(Date.now());
+        expect(isDate(date)).to.equal(true);
+    });
     it('should return false with valueAsDate', function() {
         const date = Date("12-12-2022");
         const newDate = date.valueAsDate;       
@@ -15,4 +19,9 @@ describe('#isDate', function(){
         const date = "12-12-2022";
         expect(isDate(date)).to.equal(false);
     });
+    it('should return false with null', function() {
+        
+        expect(isDate(null)).to.equal(false);
+    });
+
 });
