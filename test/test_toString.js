@@ -2,10 +2,13 @@ import { expect } from 'chai';
 import toString from '../src/toString.js';
 
 describe('#toString', function(){
+
+    // Returns 'null' instead of empty string
     xit('null returns empty string', function(){
         expect(toString(null)).to.equal('')
     });
 
+    // Returns 'undefined' instead of empty string
     xit('undefined returns empty string', function(){
         var a;
         expect(toString(a)).to.equal('')
