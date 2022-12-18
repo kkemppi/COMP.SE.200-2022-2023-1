@@ -13,7 +13,7 @@ describe('#toNumber', function(){
     });
 
     it('should return zero on zero', function(){
-        expect(toNumber("0")).to.equal(0)
+        expect(toNumber(0)).to.equal(0)
     });
 
     it('should return integer on booleans', function(){
@@ -49,6 +49,11 @@ describe('#toNumber', function(){
 
     it('should return number from hexadecimal strings', function(){
         expect(toNumber("0x55")).to.equal(85)
+    });
+
+    it('should return NaN from bad hexadecimal strings', function(){
+        var isnan = Number.isNaN(expect(toNumber("0x55g")))
+        expect(isnan)
     });
 
     it('should return number from octal string', function(){
