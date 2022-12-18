@@ -14,4 +14,11 @@ describe('#filter', function(){
         
         expect(filter(testList, ({pass}) => pass)).to.deep.equal(expected);
     });
+    it('should return empty list with null', function(){
+        const testList = null;
+        const expected = [[]];
+        
+        expect(filter(testList, ({pass}) => pass)).to.deep.equal(expected);
+    });
+
 });
