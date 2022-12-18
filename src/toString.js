@@ -33,7 +33,6 @@ function toString(value) {
     return `${value.map((other) => other == null ? other : toString(other))}`
   }
   if (isSymbol(value)) {
-    console.log("is symbol")
     return value.toString()
   }
   const result = `${value}`
