@@ -12,4 +12,11 @@ describe('#get', function(){
         const expected = false;
         expect(get(testObj, 'a.b.c', false)).to.equal(expected);
     });
+    it('should return undefined with null object', function(){
+        const testObj = null;
+        const expected = undefined;
+        expect(get(testObj, 'a.b.c')).to.equal(expected);
+    });
+    
+
 });
