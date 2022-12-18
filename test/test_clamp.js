@@ -27,6 +27,12 @@ describe('#clamp', function(){
         const expected = -10;
         expect(clamp(-10, 10, testNumber)).to.equal(expected);
     });
+    it('should work wih null values', function(){
+        const testNumber = -10;
+        const expected = 0;
+        expect(clamp(null, null, testNumber)).to.equal(expected);
+    });
+
     
 
 
