@@ -12,6 +12,15 @@ describe('#toNumber', function(){
         expect(toNumber("1.0001")).to.equal(1.0001)
     });
 
+    it('should return zero on zero', function(){
+        expect(toNumber("0")).to.equal(0)
+    });
+
+    it('should return integer on booleans', function(){
+        expect(toNumber(true)).to.equal(1)
+        expect(toNumber(false)).to.equal(0)
+    });
+
     it('infinity should return infinity', function(){
         expect(toNumber(Infinity)).to.equal(Infinity)
     });
