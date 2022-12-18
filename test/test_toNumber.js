@@ -20,7 +20,7 @@ describe('#toNumber', function(){
         expect(toNumber(Number.MIN_VALUE)).to.equal(5e-324)
     });
 
-    it('string should return NAN', function(){
+    it('random string should return NAN', function(){
         var isnan = Number.isNaN(toNumber('abc'))
         expect(isnan)
     });
@@ -30,6 +30,21 @@ describe('#toNumber', function(){
         expect(isnan)
     });
 
-    // TODO: Binary, octal and hexadecimal tests
+    it('should clear leading and trailing whitespaces', function(){
+        expect(toNumber("   123 ")).to.equal(123)
+    });
 
+    it('should return number from binary string', function(){
+        expect(toNumber("0b01010101")).to.equal(85)
+    });
+
+    it('should return number from hexadecimal strings', function(){
+        expect(toNumber("0x55")).to.equal(85)
+    });
+
+    it('should return number from octal string', function(){
+        expect(toNumber("0o125")).to.equal(85)
+    });
+
+    // Missing object type tests
 });

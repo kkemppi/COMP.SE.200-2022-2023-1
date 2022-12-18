@@ -28,11 +28,19 @@ describe('#toString', function(){
         expect(toString([1, 2, 3])).to.equal('1,2,3')
     });
 
+    it('empty array returns empty string', function(){
+        expect(toString([])).to.equal('')
+    });
+
     it('string returns itself', function(){
         expect(toString("abc")).to.equal('abc')
     });
 
     it('object returns object object', function(){
         expect(toString(new Object())).to.equal('[object Object]')
+    });
+
+    it('symbol should return string', function(){
+        expect(toString(Symbol('abc'))).to.equal('Symbol(abc)')
     });
 });
