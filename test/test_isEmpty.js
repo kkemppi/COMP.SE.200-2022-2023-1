@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+import getTag from '../src/.internal/getTag.js';
 import isEmpty from '../src/isEmpty.js';
 
 describe('#isEmpty', function(){
@@ -29,9 +30,33 @@ describe('#isEmpty', function(){
     it('empty map is empty', function(){
         expect(isEmpty({})).to.equal(true);
     });
-
+      
     it('filled map is not empty', function(){
         expect(isEmpty({'a': 1})).to.equal(false);
+    });
+
+    it('empty map object is empty', function(){
+        const testMap = new Map();
+        expect(isEmpty(testMap)).to.equal(true);
+    });
+
+    it('filled map object is not empty', function(){
+        const testMap = new Map([
+            [1, 'one'],
+            [2, 'two'],
+            [3, 'three'],
+        ]);
+        expect(isEmpty(testMap)).to.equal(false);
+    });
+
+    it('empty set object is empty', function(){
+        const testSet = new Set();
+        expect(isEmpty(testSet)).to.equal(true);
+    });
+
+    it('filled set object is not empty', function(){
+        const testSet = new Set([1, 2, 3]);
+        expect(isEmpty(testSet)).to.equal(false);
     });
 
     it('empty string is empty', function(){

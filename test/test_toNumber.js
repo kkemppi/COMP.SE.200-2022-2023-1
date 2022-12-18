@@ -25,6 +25,11 @@ describe('#toNumber', function(){
         expect(isnan)
     });
 
+    it('symbol should return NAN', function(){
+        var isnan = Number.isNaN(toNumber(Symbol('abc')))
+        expect(isnan)
+    });
+
     // TODO: Binary, octal and hexadecimal tests
 
 });
