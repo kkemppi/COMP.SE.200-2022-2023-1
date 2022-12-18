@@ -8,4 +8,10 @@ describe('#filter', function(){
         
         expect(filter(testList, ({pass}) => pass)).to.deep.equal(expected);
     });
+    it('should return empty list with empty array', function(){
+        const testList = [];
+        const expected = [[]];
+        
+        expect(filter(testList, ({pass}) => pass)).to.deep.equal(expected);
+    });
 });
