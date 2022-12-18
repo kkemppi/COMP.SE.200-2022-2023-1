@@ -6,6 +6,19 @@ describe('#filter', function(){
         const testList = [{'name':'test1','pass': true}, {'name':'test2', 'pass': false}];
         const expected = [{'name':'test1','pass': true}];
         
-        expect(filter(testList, ({pass}) => pass)).to.equal(expected);
+        expect(filter(testList, ({pass}) => pass)).to.deep.equal(expected);
     });
+    it('should return empty list with empty array', function(){
+        const testList = [];
+        const expected = [[]];
+        
+        expect(filter(testList, ({pass}) => pass)).to.deep.equal(expected);
+    });
+    it('should return empty list with null', function(){
+        const testList = null;
+        const expected = [[]];
+        
+        expect(filter(testList, ({pass}) => pass)).to.deep.equal(expected);
+    });
+
 });
