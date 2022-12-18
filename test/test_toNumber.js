@@ -45,4 +45,6 @@ describe('#toNumber', function(){
     it('should return number from octal string', function(){
         expect(toNumber("0o125")).to.equal(85)
     });
+
+    // Missing object type tests
 });

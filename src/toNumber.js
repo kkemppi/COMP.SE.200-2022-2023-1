@@ -49,6 +49,7 @@ function toNumber(value) {
     return NAN
   }
   if (isObject(value)) {
+    console.log(value.valueOf())
     const other = typeof value.valueOf === 'function' ? value.valueOf() : value
     value = isObject(other) ? `${other}` : other
   }
